@@ -551,12 +551,14 @@ AI меняет не только инструменты, но и **опреде
 
 ### 5.10 Stack Overflow: Роль "Front-end Developer" (% респондентов)
 
-| Год | Front-end | Full-stack | Back-end | Метод опроса |
-|---|---|---|---|---|
-| 2019 | **32.8%** | 51.9% | 50.0% | multi-select |
-| 2021 | 27.42% | 49.47% | 43.73% | multi-select |
-| 2022 | 25.96% | 46.82% | 43.38% | multi-select |
-| 2023 | 6.6% | 33.48% | 17.88% | **single-select** (primary role) |
+| Год | Front-end | Full-stack | Back-end | Architect | Метод опроса |
+|---|---|---|---|---|---|
+| 2019 | 32.8% | 51.9% | 50.0% | - |    multi-select |
+| 2021 | 27.42% | 49.47% | 43.73% | - | multi-select |
+| 2022 | 25.96% | 46.82% | 43.38% | - | multi-select |
+| 2023 | 6.6% | 33.48% | 17.88% | - | single-select |
+| 2024 | 5.6% | 30.7% | 16.7% | - | single-select |
+| 2025 | 4.3% | 27% | 14.2% | 4% | single-select |
 
 > **Внимание:** 2023 изменил метод (multi → single select), поэтому 6.6% **несравнимо** с предыдущими годами. Тренд 2019→2022 (multi-select): front-end снижается с 33% до 26%, потому что **граница front-end ↔ full-stack размывается** — фронтенд-разработчик теперь обязан знать SSR, API routes, edge functions.
 
