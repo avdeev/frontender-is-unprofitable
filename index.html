@@ -1,0 +1,513 @@
+<!-- Тезисы:
+• Как у нас в агенстве появился ИИ
+• Как изменилась разработка
+• Что изменилось в бизнесе
+• Что будет дальше (или нет) -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-P6SW86D");
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>Фронтендер нерентабелен, или как заканчивается эпоха узких специалистов</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- prettier-ignore -->
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/index.css">
+    <style>
+      .shower {
+        --slide-ratio: calc(16 / 9);
+        --ribbon-size: 40px;
+        --slide-side: 41px;
+      }
+
+      .progress::before {
+        background-color: #ff0000;
+      }
+
+      .slide {
+        padding-top: 51px;
+        background-image: url(pictures/slide-cover.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+      }
+
+      .slide.clear {
+        background-image: none;
+      }
+
+      /* .slide::before {
+        position: absolute;
+        content: "X";
+        bottom: 25px;
+        left: 104px;
+      } */
+
+      .slide.clear::before {
+        content: "";
+      }
+
+      .slide::after {
+        top: auto;
+        bottom: 10px;
+        left: auto;
+        right: 30px;
+        background: none;
+        color: #1a1a1a;
+      }
+
+      .slide h2 {
+        color: #1a1a1a;
+        font-size: 60px;
+      }
+
+      .slide h2.shout {
+        font-size: 120px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 80%;
+      }
+
+      .slide h2.shout.elevated {
+        margin-top: -35px;
+      }
+
+      .slide h2.shout.small {
+        font-size: 3.5em;
+      }
+
+      .slide .brand {
+        color: #ff0000;
+      }
+
+      .slide ol,
+      .slide ul {
+        padding-left: 40px;
+      }
+
+      .slide li {
+        font-size: 28px;
+      }
+
+      .slide ul.big {
+        padding-left: 50px;
+      }
+
+      .slide ul.big li {
+        font-size: 40px;
+      }
+
+      .slide pre {
+        font-size: 21px;
+        padding-left: 41px;
+      }
+
+      .cover {
+        z-index: 1;
+      }
+    </style>
+    <script src="shower/index.js" defer></script>
+  </head>
+  <body class="shower list">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P6SW86D"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="caption">
+      <h1>Фронтендер нерентабелен, или как заканчивается эпоха узких специалистов</h1>
+      <p>
+        <a href="https://alexey-avdeev.com/">Алексей Авдеев</a>,
+        <a href="https://mish.design/">Mish</a>
+      </p>
+    </header>
+
+    <section class="slide clear" id="cover">
+      <div style="width: 640px; padding-top: 30px; margin-left: 30px">
+        <h2>Фронтендер нерентабелен, или как заканчивается эпоха узких специалистов</h2>
+        <p>
+          <a href="https://alexey-avdeev.com/">Алексей Авдеев</a>,
+          <a href="https://mish.design/">Mish</a>
+        </p>
+      </div>
+      <style>
+        .shower #cover {
+          --slide-side: 60px;
+        }
+        #cover {
+          background-image: url(pictures/title-cover.png);
+          background-position: center;
+          background-color: #fff;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        #cover h2 {
+          margin: 0;
+          color: #000;
+          font-size: 62px;
+        }
+        #cover p {
+          margin: 18px 0 0;
+          color: #000;
+          font-size: 24px;
+        }
+        #cover p a {
+          color: #000;
+        }
+      </style>
+    </section>
+
+    <!-- Привет, я Леха, техдир в Mish. Вы могли видеть меня в Твиттере, на Скиллбоксе или в подкастах. Сегодня я пришел рассказать, почему уволил половину отдела фронтенда -->
+
+    <section class="slide">
+      <img class="cover w" src="pictures/tweet1.png" alt="" style="width: 80%" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/fc2022.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/skillbox.png" alt="" />
+    </section>
+
+    <!-- слайдшоу с докладами -->
+    <section class="slide">
+      <img class="cover w" src="pictures/jsonapi_youtube.jpg" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/docker_youtube.jpg" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/web3-cover.jpg" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/maxresdefault.jpg" alt="" />
+    </section>
+
+    <!-- АКТ I: Запугивание (Тема: «Фронтендер больше не нужен») -->
+    <!-- Мы теряли тендеры, потому что другие считали без классического фронтенда. Вот цифры -->
+
+
+    <section class="slide">
+      <h2 class="shout brand">Фронтендер не рентабелен</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/mish-site.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Заказная разработка</h2>
+    </section>
+
+    <!-- Часы ➔ Деньги. -->
+
+    <section class="slide">
+      <h2 class="shout">Быстро видим деньги</h2>
+    </section>
+
+    <!-- Прейсейл ➔ Смета ➔ Оплата (3 месяца) -->
+
+    <!-- https://docs.google.com/spreadsheets/d/1CcflNwj7MX7xetVCznTQwm4xkz7FWYvWLswDSqJcRGE/edit?gid=1634641752#gid=1634641752 -->
+    <section class="slide">
+      <img class="cover h" src="pictures/classic.png" alt="" />
+    </section>
+
+    <!-- <section class="slide">
+      <h2 class="shout" style="font-size: 500%;">📉</h2>
+    </section> -->
+
+    <section class="slide">
+      <img class="cover h" src="pictures/decrease.png" alt="" />
+    </section>
+
+    <!-- Кто-то делает в два раза дешевле -->
+    <section class="slide">
+      <h2 class="shout">Кто-то делает дешевле</h2>
+    </section>
+
+    <!-- переделать -->
+    <section class="slide">
+      <img class="cover h" src="pictures/new.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/stack-overflow.png" alt="" style="width: 90%;" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Чистых фронтов нужно меньше</h2>
+    </section>
+    <!-- «Чистый» фронтендер, который умеет только верстать и красить кнопочки, становится экономически невыгодным для бизнеса. -->
+
+    <section class="slide">
+      <h2 class="shout">Штат: -50%</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Зачем джуны и мидлы</h2>
+    </section>
+
+    <!-- Блок 4. Кейс с дизайнером: Паника нарастает -->
+
+    <section class="slide">
+      <h2 class="shout">Лёх, я вчера сделал джиру</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/cat.jpeg" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Он не программист</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/strophe.png" alt="" />
+    </section>
+
+    <!-- прослойка между Figma и браузером -->
+
+    <!--  -->
+
+    <!-- Фронтенд хоронят раз в пять лет, но мы каждый раз выживаем и становимся сильнее» -->
+
+    <!-- АКТ II: СЛОМ -->
+    <!-- Блок 5. Слом: Оркестр макак и реальность ИИ (Слайды 22–26) -->
+
+    <section class="slide">
+      <h2 class="shout">Конец фронтенда?</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand">НЕТ</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/vibecoding_crop.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover w" src="pictures/vibecoding_full.png" alt="" style="width: 95%;"/>
+    </section>
+
+    <!-- сделать картинку -->
+    <section class="slide">
+      <h2 class="shout">Галлюцинации, мёртвый код, баги</h2>
+    </section>
+
+    <section class="slide clear">
+      <img class="cover h" src="pictures/you-are-absolutely-right.webp" alt=""/>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand">Ответственный взрослый</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Soft Skills</h2>
+    </section>
+
+    <!-- АКТ III: Пересборка (Тема: «Совсем другой фронтендер») -->
+
+    <section class="slide">
+      <h2 class="shout brand">Время циклично</h2>
+    </section>
+    <!-- Фронтенд хоронят стабильно раз в несколько лет -->
+
+    <section class="slide">
+      <h2 class="shout">1997 год</h2>
+    </section>
+
+    <section class="slide clear">
+      <img class="cover h" src="pictures/dreamweaver.jpeg" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">2013 год</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Фронтенд-инженер</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">2016 год</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Фронтопс</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">2019 год</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Tilda, Webflow</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">SSR ➔ CSR ➔ SSR</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">1990 — 2000: Вебмастер</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand">2026 год:<br>Новый вебмастер</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Вайб-кодер?</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand">Agentic Dev</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/agentic_conf.png" alt="" />
+    </section>
+
+    <!-- <section class="slide">
+      <img class="cover h" src="pictures/agentic_conf_meme.png" alt="" />
+    </section> -->
+
+    <section class="slide">
+      <img class="cover h" src="pictures/roadmap.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Claude, Agents, MCP, Skills</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/routine.png" alt="" style="height: 74%;"/>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/mcp.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/tdd-cycle.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/symphony.png" alt="" />
+    </section>
+
+    <!-- <section class="slide">
+      <img class="cover w" src="pictures/hirehi.png" alt="" />
+    </section> -->
+
+    <section class="slide">
+      <img class="cover h" src="pictures/assembly.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/strapi-doc.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/t-shaped.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout" style="font-size: 4.4em;">Архитектура важнее синтаксиса</h2>
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/future.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/ThreeJedi.webp" alt="" />
+    </section>
+
+    <!-- Чеклист навыков -->
+    <section class="slide">
+      <img class="cover h" src="pictures/skills-fundament.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/skills-lost.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <img class="cover h" src="pictures/skills-agentic.png" alt="" />
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand" style="font-size: 4.3em;">Старый фронтендер нерентабелен</h2>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout brand">Станьте новым</h2>
+    </section>
+
+    <section class="slide" id="last-slide">
+      <h2>Вопросы?</h2>
+
+      <ul>
+        <li>👨 Алексей Авдеев</li>
+        <li>🌐 <a href="https://github.com/avdeev">github.com/avdeev</a></li>
+        <li>
+          🌐
+          <a href="https://x.com/avdeev_alexey">x.com/avdeev_alexey</a>
+        </li>
+        <li>
+          🌐
+          <a href="https://t.me/aavdeev_channel">t.me/aavdeev_channel</a>
+        </li>
+
+        <li>🌐 Продуктовая лаборатория <a href="https://mish.design/">Mish</a></li>
+      </ul>
+
+      <img src="pictures/qr_aavdeev_channel.png" alt="tg" />
+      <style>
+        #last-slide li {
+          font-size: 28px;
+        }
+
+        #last-slide img {
+          height: 300px;
+          position: absolute;
+          right: 150px;
+          top: 125px;
+        }
+      </style>
+    </section>
+
+    <footer class="badge">
+      <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <!-- Copyright © 2021 Yours Truly, Famous Inc. -->
+  </body>
+</html>
