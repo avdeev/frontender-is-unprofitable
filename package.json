@@ -1,14 +1,21 @@
 {
-  "private": true,
-  "scripts": {
-    "pdf": "shower pdf",
-    "serve": "shower serve",
-    "archive": "shower archive",
-    "bundle": "shower bundle",
-    "publish": "shower publish"
-  },
-  "dependencies": {
-    "@shower/core": "3.5.1",
-    "@shower/ribbon": "4.2.0"
-  }
+	"private": true,
+	"files": [
+		"pictures/**",
+		"index.html"
+	],
+	"scripts": {
+		"serve": "shower serve",
+		"bundle": "shower bundle",
+		"archive": "shower archive",
+		"pages": "shower pages",
+		"pdf": "shower pdf"
+	},
+	"dependencies": {
+		"@shower/core": "^3.6.0",
+		"@shower/ribbon": "^4.2.0"
+	},
+	"devDependencies": {
+		"@shower/cli": "^1.1.1"
+	}
 }
